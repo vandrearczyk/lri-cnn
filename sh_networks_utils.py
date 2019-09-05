@@ -41,8 +41,7 @@ def sh_conv3d(X, out_ch, ksize, strides=(1, 1, 1, 1, 1), padding='VALID', degree
 
         Returns
         -------
-        _ : tf tensor
-            The tensor output of this layer with shape
+        tf tensor output of this layer with shape
 
         """
 
@@ -78,8 +77,7 @@ def conv3d_complex(X, W, strides=(1, 1, 1, 1), padding='VALID', name='conv3d_com
 
     Returns
     -------
-    complex tf tensor,
-        complex tensor shape (bs,h,w,d,out_ch)
+    complex tf tensor shape (bs,h,w,d,out_ch)
     """
 
     Wsh = W.get_shape().as_list()
@@ -117,7 +115,7 @@ def s_conv3d(X, out_ch, ksize, strides=(1, 1, 1, 1, 1), padding='VALID', degreeM
 
         Returns
         -------
-        _ :
+
     """
 
     in_ch = X.get_shape().as_list()[4]
@@ -149,8 +147,7 @@ def sse_conv3d(X, out_ch, ksize, strides=(1, 1, 1, 1, 1), padding='VALID', degre
 
     Returns
     -------
-    _ : tf tensor
-        the Solid Spherical Energy (SSE)-LRI convolution responses.
+    the Solid Spherical Energy (SSE)-LRI convolution responses.
     """
     # Create a matrix for quickly summing the norms within degrees n
     mat = np.zeros(((degreeMax + 1) ** 2, degreeMax + 1))
